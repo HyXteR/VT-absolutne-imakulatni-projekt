@@ -1,0 +1,229 @@
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(73, 72, 72);
+}
+
+li {
+    text-align: center;
+    float: left;
+}
+
+/*twizzlers slouží doslova jen k tomu aby název ''twizzlers web'' nerozbil navigační menu*/
+.twizzlers {
+    display: block;
+    counter-reset: rgb(255, 0, 0);
+    text-align: center;
+    padding: 4px 16px;
+    text-decoration: none;
+    text-decoration-color: red;
+}
+
+li a {
+    display: block;
+    counter-reset: rgb(255, 0, 0);
+    text-align: center;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+li a:hover {
+    background-color: rgb(255, 0, 0);
+    text-decoration-color: rgb(0, 0, 0);
+    color: black;
+}
+
+body {
+    background-image: url(images/f974a21cdd1d7bebf7ab1e9532434ee7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+    text-align: center;
+    align-items: center;
+}
+
+/*Hlavní sekce*/
+.hl-sekce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+/*Portfólio sekce*/
+.portfolio {
+    background-color: #eaeaea;
+    padding: 60px 20px;
+
+}
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projekty {
+    display: flex;
+    justify-content: space-around;
+}
+
+.projekt {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 30%;
+}
+
+.projekt h3 {
+    margin-bottom: 10px;
+}
+
+/*kontakt sekce*/
+.kontakt {
+    padding-bottom: 40px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom:0;
+    left:0;
+}
+
+.kontakt h2 {
+    margin-bottom: 20px;
+}
+
+.kontakt a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.kontakt a:hover {
+    text-decoration: underline;
+}
+
+.texticek {
+    font-size: large;
+}
+
+.tabone {
+    background-color: #333;
+    padding: 0px;
+    margin: auto;
+    border: 20px solid #6d6a6a;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 100;
+}
+
+.hamburger span {
+    background: white;
+    height: 3px;
+    width: 30px; 
+    margin: 6px;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff0000; 
+    text-decoration: underline;
+}
+
+
+/*responzivita pro malé dotykové mobilně přenosné telekomunikační zařízení (AKA chytrý telefon (AKA MOBIL))*/
+@media (max-width: 768px) {
+
+    .kontakt {
+        position: static;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9); 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+        padding: 0;
+    }
+
+    .menu-toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 20px 0;
+    }
+
+    .menu a {
+        font-size: 22px;
+        color: #ffffff; 
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); 
+    }
+
+    .menu a:hover {
+        color: #ff0000;
+        text-shadow: 1px 1px 6px rgba(255, 0, 0, 0.8);
+    }
+
+    .tabone {
+        width: 90%;
+    }
+
+    .projekty {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projekt {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+}
